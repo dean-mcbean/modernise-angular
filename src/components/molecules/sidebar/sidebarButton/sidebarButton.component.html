@@ -1,0 +1,13 @@
+
+<style>
+</style>
+
+<main class="main" [class]="active ?'active' : ''">
+  <icon [icon]="icon"></icon>
+  <typography>
+    {{text}}
+  </typography>
+  @if (notifications !== undefined) {
+    <notification-pill color="general">{{notifications}}</notification-pill>
+  }
+</main>

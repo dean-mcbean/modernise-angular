@@ -1,0 +1,65 @@
+@use "../../../styles.sass" as *
+@use "sass:map"
+
+// TYPOGRAPHY
+
+@mixin header($font-size, $line-height)
+  font-family: $inter-font
+  font-size: $font-size
+  line-height: $line-height
+  font-weight: 700
+
+@mixin text($font-size, $line-height)
+  font-family: $inter-font
+  font-size: $font-size
+  line-height: $line-height
+
+@mixin subtitle($font-size, $line-height)
+  font-family: $inter-font
+  font-size: $font-size
+  line-height: $line-height
+
+.text1
+  @include text(16px, 24px)
+.text2
+  @include text(14px, 20px)
+.text3
+  @include text(12px, 16px)
+
+.header1
+  @include header(80px, 112px)
+.header2
+  @include header(64px, 90px)
+.header3
+  @include header(48px, 66px)
+.header4
+  @include header(32px, 44px)
+.header5
+  @include header(24px, 36px)
+.header6
+  @include header(20px, 28px)
+
+.subtitle1
+  @include subtitle(20px, 28px)
+.subtitle2
+  @include subtitle(24px, 34px)
+
+// COLORS
+
+.general
+  color: map.get($general-palette, 100)
+
+.primary
+  color: map.get($primary-palette, 100)
+
+.grey
+  color: map.get($general-palette, 80)
+
+.red
+  color: map.get($red-palette, 100)
+
+.green
+  color: map.get($green-palette, 100)
+
+.yellow
+  color: map.get($yellow-palette, 100)

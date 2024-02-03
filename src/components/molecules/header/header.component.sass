@@ -1,0 +1,51 @@
+@use "../../../styles.sass" as *
+@use "sass:map"
+
+.main
+  background-color: #FFF
+  height: 68px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 113px
+  padding: 0 20px
+  box-shadow: 0px 1px 4px 0px #15223214
+
+.logo
+  width: 159px
+  height: 38px
+  background-color: map.get($general-palette, 50)
+
+.search
+  flex-grow: 1
+  display: flex
+  align-items: center
+  gap: 8px
+
+.menu
+  display: flex
+  align-items: center
+  gap: 20px
+
+.notification-count
+  position: absolute
+  top: 0
+  right: 0
+
+.notification-count typography
+  color: white
+  font-weight: 700
+
+.profile
+  display: flex
+  align-items: center
+  gap: 12px
+
+.profile .name
+  white-space: nowrap
+
+.profile .avatar
+  height: 36px
+  width: 36px
+  border-radius: 50%
+  background-color: map.get($general-palette, 50)

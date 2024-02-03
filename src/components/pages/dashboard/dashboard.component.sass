@@ -1,0 +1,56 @@
+@use "../../../styles.sass" as *
+@use "sass:map"
+
+.main, sidebar
+  display: flex
+  height: 100%
+
+.content
+  padding: 30px 40px
+  display: flex
+  flex-direction: column
+  gap: 30px
+  width: 100%
+
+.tile-container
+  width: 100%
+  display: flex
+  gap: 30px
+  flex-wrap: wrap
+
+.stat-tile
+  width: 100%
+
+  .stat-tile-content
+    display: flex
+    flex-direction: row
+    gap: 10px
+
+  .stat-segment
+    display: flex
+    flex-direction: row
+    padding: 28px
+    gap: 10px
+    flex-grow: 1
+    justify-content: space-between
+    align-items: center
+    border-right: 1px solid map.get($general-palette, 40)
+
+    .stat-info
+      display: flex
+      flex-direction: column
+
+    .stat-name
+      margin-top: -6px
+
+    .stat-relative
+      margin-top: 10px
+
+    .stat-icon
+      width: 56px
+      height: 56px
+      border-radius: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      background-color: map.get($general-palette, 50)

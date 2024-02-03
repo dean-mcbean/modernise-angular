@@ -1,0 +1,22 @@
+@use "../../../styles.sass" as *
+@use "sass:map"
+
+.main
+  min-width: 16px
+  height: 16px
+  padding: 0 4px
+  border-radius: 8px
+  display: flex
+  justify-content: center
+  align-items: center
+  box-sizing: border-box
+
+  >typography
+    color: white
+    font-weight: 700
+
+  &.primary
+    background-color: map.get($primary-palette, 100)
+
+  &.general
+    background-color: map.get($general-palette, 100)

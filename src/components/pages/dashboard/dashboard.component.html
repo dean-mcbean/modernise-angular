@@ -1,0 +1,25 @@
+
+<main class="main">
+  <sidebar></sidebar>
+  <div class="content">
+    <typography variant="header5">Dashboard</typography>
+    <div class="tile-container">
+      <tile class="stat-tile">
+        <div class="stat-tile-content">
+          @for (statistic of statistics; track statistic) {
+            <div class="stat-segment">
+              <div class="stat-info">
+                <typography variant="header5" class="stat-value">{{statistic.value}}</typography>
+                <typography color="grey" class="stat-name">{{statistic.name}}</typography>
+                <typography [color]="statistic.relative.positive ? 'green' : 'red'" class="stat-relative">{{statistic.relative.value}}%</typography>
+              </div>
+              <div class="stat-icon">
+                <icon [icon]="statistic.icon"></icon>
+              </div>
+            </div>
+          }
+        </div>
+      </tile>
+    </div>
+  </div>
+</main>

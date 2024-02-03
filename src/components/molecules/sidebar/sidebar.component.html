@@ -1,0 +1,15 @@
+
+<style>
+</style>
+
+<main class="main">
+  @for ( button of buttons; track button) {
+    @if (button.header !== undefined) {
+      <typography variant="text3">{{button.header}}</typography>
+    } 
+    @else {
+      <sidebar-button  [icon]="button.icon" [text]="button.text" [active]="!!button.active" [notifications]="button.notifications">
+      </sidebar-button>
+    }
+  }
+</main>

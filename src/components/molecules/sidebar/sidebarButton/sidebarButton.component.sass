@@ -1,0 +1,29 @@
+@use "../../../../styles.sass" as *
+@use "sass:map"
+
+.main
+  display: flex
+  align-items: center
+  cursor: pointer
+  border-radius: $padding
+  transition: background-color 0.1s ease-in-out
+  padding: 10px 16px
+  box-sizing: border-box
+  gap: 16px
+  position: relative
+
+  >typography
+    color: map.get($general-palette, 80)
+    flex-grow: 1
+
+  &:hover
+    background-color: map.get($general-palette, 40)
+
+  &.active
+    background-color: map.get($primary-palette, 100)
+
+    >typography
+      color: map.get($general-palette, 0)
+
+  notification-count
+    background-color: map.get($general-palette, 100)

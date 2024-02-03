@@ -1,0 +1,17 @@
+@use "../../../styles.sass" as *
+@use "sass:map"
+
+.main
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  height: 100%
+  box-shadow: -1px 0px 0px 0px #D7DBEC inset
+  width: 218px
+  padding: calc($padding * 4)
+
+  >typography
+    margin-top: calc($padding * 7)
+    margin-bottom: calc($padding * 3)
+    margin-left: calc($padding * 3)
+    color: map.get($general-palette, 60)
