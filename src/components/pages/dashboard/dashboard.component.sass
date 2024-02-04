@@ -5,8 +5,15 @@
   display: flex
   height: 100%
 
+.content-container 
+  width: 100%
+  height: 100%
+  overflow: auto
+  box-sizing: border-box
+
 .content
-  padding: 30px 40px
+  box-sizing: border-box
+  padding: 30px 40px 120px 40px
   display: flex
   flex-direction: column
   gap: 30px
@@ -15,8 +22,85 @@
 .tile-container
   width: 100%
   display: flex
+  flex-direction: column
+  gap: 30px
+
+.tile-row
+  display: flex
+  flex-direction: row
   gap: 30px
   flex-wrap: wrap
+
+.tile-header
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  gap: 20px
+  margin-bottom: 24px
+
+.tile-subtitle-row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: flex-end
+
+.tile-subtitle-column
+  @extend .tile-subtitle-row
+  flex-direction: column
+  align-items: flex-start
+  gap: 20px
+
+tile
+  flex-grow: 1
+
+.sales-tile
+
+  histogram
+    margin-top: 30px
+    height: 194px
+
+  .tile-subtitle-column
+    padding-bottom: 30px
+    border-bottom: 1px solid map.get($general-palette, 40)
+
+
+.orders-tile
+  gap: 24px
+  flex-grow: 3
+
+  .orders-info-row
+    display: flex
+    flex-direction: row
+    gap: 40px
+
+  line-graph
+    margin-top: 28px
+    flex-grow: 1
+    min-height: 194px
+
+  .orders-legend
+    display: flex
+    flex-direction: row
+    gap: 21px
+    align-items: center
+
+    .legend-item
+      display: flex
+      flex-direction: row
+      gap: 8px
+      align-items: center
+
+    .legend-color
+      width: 12px
+      height: 12px
+      border-radius: 25%
+
+      &.primary
+        background-color: map.get($primary-palette, 100)
+
+      &.grey
+        background-color: map.get($general-palette, 50)
 
 .stat-tile
   width: 100%
@@ -24,27 +108,25 @@
   .stat-tile-content
     display: flex
     flex-direction: row
-    gap: 10px
+    flex-wrap: wrap
 
   .stat-segment
     display: flex
     flex-direction: row
     padding: 28px
+    padding-right: 56px
+    width: 275px
+    box-sizing: border-box
     gap: 10px
     flex-grow: 1
     justify-content: space-between
     align-items: center
     border-right: 1px solid map.get($general-palette, 40)
+    border-bottom: 1px solid map.get($general-palette, 40)
 
     .stat-info
       display: flex
       flex-direction: column
-
-    .stat-name
-      margin-top: -6px
-
-    .stat-relative
-      margin-top: 10px
 
     .stat-icon
       width: 56px
@@ -53,4 +135,11 @@
       display: flex
       justify-content: center
       align-items: center
-      background-color: map.get($general-palette, 50)
+      background-color: map.get($primary-palette, 30)
+
+    .stat-relative-container
+      display: flex
+      flex-direction: row
+      gap: 4px
+      margin-top: 10px
+      align-items: center

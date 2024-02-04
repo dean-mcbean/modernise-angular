@@ -1,0 +1,37 @@
+
+<style>
+</style>
+
+<main class="main">
+  <table>
+    <tr class="row first-row">
+      @for (column of columns; track column;) {
+        <td class="item">
+          <typography color="grey">{{column.label}}</typography>
+        </td>
+      }
+    </tr>
+    @for (row of processed_rows; track row) {
+      <tr class="row">
+        @for (item of row; track item; let item_i = $index) {
+          <td class="item">
+            @switch (columns[item_i].type) {
+              @case ('text') {
+                <typography>{{item.value}}</typography>
+              }
+              @case ('status') {
+                <div class='status' [attr.status]="item.value"><typography>{{item.value}}</typography></div>
+              }
+              @case ('thumbnail-text') {
+                <div class='thumbnail-text'>
+                  <img src="{{item.href ?? 'oops'}}">
+                  <typography>{{item.value}}</typography>
+                </div>
+              }
+            }
+          </td>
+        }
+      </tr>
+    }
+  </table>
+</main>

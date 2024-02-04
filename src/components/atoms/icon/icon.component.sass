@@ -2,8 +2,27 @@
 @use "sass:map"
 
 .main
-  background-color: map.get($general-palette, 50)
   height: 24px
   width: 24px
-  border-radius: 50%
   position: relative
+
+  &.default
+    background-color: map.get($general-palette, 50)
+    border-radius: 50%
+
+    .icon
+      display: none
+
+.icon
+  height: 24px
+  width: 24px
+  background-color: map.get($general-palette, 100)
+
+  &[iconColor = "grey"]
+    background-color: map.get($general-palette, 70)
+  &[iconColor = "primary"]
+    background-color: map.get($primary-palette, 100)
+  &[iconColor = "green"]
+    background-color: map.get($green-palette, 100)
+  &[iconColor = "red"]
+    background-color: map.get($red-palette, 100)

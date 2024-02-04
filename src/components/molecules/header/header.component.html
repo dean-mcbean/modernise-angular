@@ -5,20 +5,19 @@
 <main class="main">
   <div class="logo"></div>
   <div class="search">
-    <icon class="search-icon"></icon>
+    <icon class="search-icon" icon="actions/Search"></icon>
     <typography color="grey" variant="text2">Search...</typography>
   </div>
   <div class="menu">
-    <icon class="chat-button"></icon>
-    <icon class="notification-button">
+    <icon class="chat-button" icon="communication/Chat"></icon>
+    <icon class="notification-button" icon="common/Bell">
       <notification-pill class="notification-count">5</notification-pill>
     </icon>
     <div class="profile">
-      <div class="avatar"></div>
-      <div class="name">
+      <dropdown class="name" [items]="['Example Text', 'Example Text 2']">
+        <div class="avatar"></div>
         <typography color="grey" variant="text2">X'eriya Ponald</typography>
-      </div>
-      <div class="downarrow">V</div>
+      </dropdown>
     </div>
   </div>
 </main>

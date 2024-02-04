@@ -2,6 +2,7 @@
 <style>
 </style>
 
-<main class="main">
+<main class="main" [class]="mask == 'default' ? 'default' : ''">
+  <div class="icon" [style]="{mask: mask}" [attr.iconColor]="color"></div>
   <ng-content></ng-content>
 </main>

@@ -1,25 +1,87 @@
 
 <main class="main">
   <sidebar></sidebar>
-  <div class="content">
-    <typography variant="header5">Dashboard</typography>
-    <div class="tile-container">
-      <tile class="stat-tile">
-        <div class="stat-tile-content">
-          @for (statistic of statistics; track statistic) {
-            <div class="stat-segment">
-              <div class="stat-info">
-                <typography variant="header5" class="stat-value">{{statistic.value}}</typography>
-                <typography color="grey" class="stat-name">{{statistic.name}}</typography>
-                <typography [color]="statistic.relative.positive ? 'green' : 'red'" class="stat-relative">{{statistic.relative.value}}%</typography>
-              </div>
-              <div class="stat-icon">
-                <icon [icon]="statistic.icon"></icon>
+  <div class="content-container">
+    <div class="content">
+      <typography variant="header5">Dashboard</typography>
+      <div class="tile-container">
+        <div class="tile-row">
+          <tile class="stat-tile" padding="0px">
+            <div class="stat-tile-content">
+              @for (statistic of statistics; track statistic) {
+                <div class="stat-segment">
+                  <div class="stat-info">
+                    <statistic class="orders-info"
+                      [value]="statistic.value"
+                      [name]="statistic.name"/>
+                    <div class="stat-relative-container">
+                      <typography [color]="statistic.relative.positive ? 'green' : 'red'" class="stat-relative">{{statistic.relative.value}}%
+                      </typography>
+                      <icon [icon]="statistic.relative.positive ? 'arrows/Up (2)' : 'arrows/Down (2)'" [color]="statistic.relative.positive ? 'green' : 'red'"></icon>
+                    </div>
+                  </div>
+                  <div class="stat-icon">
+                    <icon [icon]="statistic.icon" color="primary"></icon>
+                  </div>
+                </div>
+              }
+            </div>
+          </tile>
+        </div>
+        <div class="tile-row">
+          <tile class="orders-tile">
+            <div class="tile-header">
+              <typography variant="header6">Orders Over Time</typography>
+              <dropdown [items]="['Last Week', 'Last Month']"><typography color="grey" variant="text2">Last 12 Hours</typography></dropdown>
+            </div>
+            <div class="tile-subtitle-row">
+              <div class="orders-info-row">
+                @for (order of orders; track order) {
+                  <statistic class="orders-info"
+                    [value]="order.value"
+                    name="Orders on {{order.date}}"/>
+                }
+                </div>
+              <div class="orders-legend">
+                @for (order of orders; track order) {
+                  <div class="legend-item">
+                    <div class="legend-color" [class]="order.color"></div>
+                    <typography color="grey" variant="text2">{{order.date}}</typography>
+                  </div>
+                }
               </div>
             </div>
-          }
+            <line-graph [datasets]="[]"></line-graph>
+          </tile>
+          <tile class="sales-tile">
+            <div class="tile-header">
+              <typography variant="header6">Sales Over Time</typography>
+            </div>
+            <div class="tile-subtitle-column">
+              @for (sale of sales; track sale) {
+                <statistic
+                  [value]="sale.value"
+                  [name]="sale.name"/>
+              }
+            </div>
+            <histogram [datasets]="[]"></histogram>
+          </tile>
         </div>
-      </tile>
+        <div class="tile-row">
+          <tile class="transactions-tile">
+            <div class="tile-header">
+              <typography variant="header6">Recent Transactions</typography>
+            </div>
+            <display-table [columns]="transactions_columns" [rows]="transactions"></display-table>
+          </tile>
+          <tile class="products-tile">
+            <div class="tile-header">
+              <typography variant="header6">Top Products by Units Sold</typography>
+            </div>
+            <display-table [columns]="products_columns" [rows]="products"></display-table>
+          </tile>
+        </div>
+      </div>
     </div>
   </div>
 </main>

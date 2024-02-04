@@ -1,0 +1,45 @@
+@use "../../../styles.sass" as *
+@use "sass:map"
+
+.main
+  width: 100%
+
+table
+  width: 100%
+  border-spacing: 0
+
+td
+  border-bottom: 1px solid map.get($general-palette, 40)
+  padding: calc($padding * 4) calc($padding * 2)
+
+  &:first-child:not(.first-row td)
+    font-weight: 500
+
+  .status
+    width: fit-content
+    padding: calc($padding * 0.5) calc($padding * 2)
+    border-radius: $padding
+
+    &[status="Paid"]
+      background-color: map.get($green-palette, 40)
+      color: map.get($green-palette, 100)
+    
+    &[status="Pending"]
+      background-color: map.get($general-palette, 40)
+      color: map.get($general-palette, 100)
+  
+  .thumbnail-text
+    display: flex
+    align-items: center
+    gap: 12px
+
+    img
+      width: 36px
+      height: 36px
+      border-radius: $padding
+
+
+.first-row td
+  border-bottom-width: 2px
+  padding: calc($padding * 3) calc($padding * 2)
+  

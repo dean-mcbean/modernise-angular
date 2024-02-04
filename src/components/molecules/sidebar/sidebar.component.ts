@@ -4,20 +4,20 @@ import { NotificationPill } from '../../atoms/notificationPill/notificationPill.
 import { Typography } from '../../atoms/typography/typography.component';
 
 const buttons = [
-  { text: 'Dashboard', icon: 'fa fa-tachometer', active: true },
-  { text: 'Orders', icon: 'fa fa-briefcase', notifications: 16},
-  { text: 'Products', icon: 'fa fa-tasks' },
-  { text: 'Categories', icon: 'fa fa-calendar' },
-  { text: 'Customers', icon: 'fa fa-envelope' },
-  { text: 'Reports', icon: 'fa fa-cog' },
-  { text: 'Coupons', icon: 'fa fa-envelope' },
-  { text: 'Index', icon: 'fa fa-envelope' },
+  { text: 'Dashboard', icon: 'common/Home', active: true },
+  { text: 'Orders', icon: 'common/List', notifications: 16},
+  { text: 'Products', icon: 'finance/Tag' },
+  { text: 'Categories', icon: 'files/Folder' },
+  { text: 'Customers', icon: 'common/Users' },
+  { text: 'Reports', icon: 'common/Statistics' },
+  { text: 'Coupons', icon: 'common/Star' },
+  { text: 'Index', icon: 'communication/Chat' },
   { header: 'Other Information' },
-  { text: 'Knowledge Base', icon: 'fa fa-envelope' },
-  { text: 'Product Updates', icon: 'fa fa-envelope' },
+  { text: 'Knowledge Base', icon: 'messages/Question' },
+  { text: 'Product Updates', icon: 'common/Ribbon' },
   { header: 'Settings' },
-  { text: 'Personal Settings', icon: 'fa fa-envelope' },
-  { text: 'Global Settings', icon: 'fa fa-envelope' },
+  { text: 'Personal Settings', icon: 'common/User' },
+  { text: 'Global Settings', icon: 'common/Settings' },
 ];
 
 @Component({

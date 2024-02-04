@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'tile',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.sass']
 })
-export class Tile {}
+export class Tile {
+  @Input() padding: string = '28px';
+}

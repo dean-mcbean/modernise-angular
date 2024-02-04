@@ -32,20 +32,16 @@
   top: 0
   right: 0
 
-.notification-count typography
-  color: white
-  font-weight: 700
-
 .profile
   display: flex
   align-items: center
   gap: 12px
 
-.profile .name
-  white-space: nowrap
+  .avatar
+    height: 36px
+    width: 36px
+    border-radius: 50%
+    background-color: map.get($general-palette, 50)
 
-.profile .avatar
-  height: 36px
-  width: 36px
-  border-radius: 50%
-  background-color: map.get($general-palette, 50)
+  typography
+    margin-right: 8px

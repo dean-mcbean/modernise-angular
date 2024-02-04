@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<main class="main dropdown" [class]="isOpen ? 'active' : ''" >
+  <div class="button" (click)="toggleDropdown()">
+    <ng-content></ng-content>
+    <icon icon="arrows/Down (2)"></icon>
+  </div>
+  <div class="content-container">
+    <div class="content">
+      @for (item of items; track item) {
+        <div class="item">
+          <typography color="grey" variant="text2">{{item}}</typography>
+        </div>
+      }
+    </div>
+  </div>
+</main>
