@@ -56,13 +56,22 @@ function processStatistics(statistics: Stat[]) {
 }
 
 const orders = [
-  { date: "May 22", value: 645, color: "primary" },
-  { date: "May 21", value: 540, color: "grey" }
+  { date: "May 21", value: 540, color: "grey" },
+  { date: "May 22", value: 645, color: "primary" }
 ];
 
 const sales = [
   { name: "Items Sold", value: (1259).toLocaleString()},
   { name: "Revenue", value: "$" + (12546).toLocaleString()}
+];
+const salesGraph = [
+  { x: "12", y: 1340 },
+  { x: "13", y: 1860 },
+  { x: "14", y: 1625 },
+  { x: "15", y: 2525 },
+  { x: "16", y: 1840 },
+  { x: "17", y: 2120 },
+  { x: "18", y: 1920 }
 ];
 
 const transactions_columns: TableColumn[] = [
@@ -107,4 +116,5 @@ export class DashboardPage {
   transactions = transactions;
   products_columns = products_columns;
   products = products;
+  salesGraph = salesGraph;
 }

@@ -29,7 +29,7 @@
           </tile>
         </div>
         <div class="tile-row">
-          <tile class="orders-tile">
+          <tile class="orders-tile"  [style.animation-delay.ms]="100" >
             <div class="tile-header">
               <typography variant="header6">Orders Over Time</typography>
               <dropdown [items]="['Last Week', 'Last Month']"><typography color="grey" variant="text2">Last 12 Hours</typography></dropdown>
@@ -53,7 +53,7 @@
             </div>
             <line-graph [datasets]="[]"></line-graph>
           </tile>
-          <tile class="sales-tile">
+          <tile class="sales-tile"   [style.animation-delay.ms]="200">
             <div class="tile-header">
               <typography variant="header6">Sales Over Time</typography>
             </div>
@@ -64,17 +64,17 @@
                   [name]="sale.name"/>
               }
             </div>
-            <histogram [datasets]="[]"></histogram>
+            <histogram [bars]="salesGraph"></histogram>
           </tile>
         </div>
         <div class="tile-row">
-          <tile class="transactions-tile">
+          <tile class="transactions-tile" [style.animation-delay.ms]="300">
             <div class="tile-header">
               <typography variant="header6">Recent Transactions</typography>
             </div>
             <display-table [columns]="transactions_columns" [rows]="transactions"></display-table>
           </tile>
-          <tile class="products-tile">
+          <tile class="products-tile" [style.animation-delay.ms]="400">
             <div class="tile-header">
               <typography variant="header6">Top Products by Units Sold</typography>
             </div>

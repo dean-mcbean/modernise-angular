@@ -3,5 +3,16 @@
 </style>
 
 <main class="main">
-  <div class="logo"></div>
+  <div class="bars">
+    @for (bar of processedBars; track bar) {
+      <div class="bargroup">
+        <div class="bar-container">
+            <div class="bar" [style]="{height: bar.heightPercentage + '%'}"></div>
+        </div>
+        <div class="x-container">
+          <typography color="grey" variant="text2">{{bar.x}}</typography>
+        </div>
+      </div>
+    }
+  </div>
 </main>
